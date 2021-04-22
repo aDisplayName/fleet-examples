@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+      app: guestbook
+      tier: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        tier: nginx
+    spec:
+      containers:
+      - name: php-ngingx
+        image: nginx
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
