@@ -4,3 +4,14 @@
 # but do not specify a namespace.  In this example no resources
 # are configured with a namespace so this default will apply
 namespace: fleet-manifest-example
+
+
+diff:
+  comparePatches:
+  - apiVersion: apps/v1
+    kind: Deployment
+    # name: gatekeeper-controller-manager
+    # namespace: cattle-gatekeeper-system
+    operations:
+    # Ignore the replicas differeces
+    - {"op": "remove", "path": "/spec/replicas"}    
