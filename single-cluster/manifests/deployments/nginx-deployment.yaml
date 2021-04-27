@@ -16,5 +16,5 @@ spec:
         image: nginx
         resources:
           requests:
-            cpu: 100m
+            cpu: 102m
             memory: 100Mi
